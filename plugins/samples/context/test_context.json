@@ -1,0 +1,39 @@
+{
+    "Dummy.dummy": [
+        {
+            "args": {
+                "sleep": 0.01
+            },
+            "runner": {
+                "type": "constant",
+                "times": 3,
+                "concurrency": 1
+            },
+            "context": {
+                "create_network": {
+                    "network": {
+                       "network_name": "rally_network",
+                    },
+                    "subnets": [
+                        {
+                            "subnet_name": "subnet1",
+                            "cidr": "3.3.3.0/24",
+                            "allocation_pool": [
+                                {
+                                    "start": "3.3.3.20",
+                                    "end": "3.3.3.100"
+                                }
+                            ],
+                            "dns_nameservers": [
+                                "114.114.114.114",
+                                "8.8.8.8"
+                            ]
+                        }
+                    ],
+                    "route": {"name": "rally_router"},
+                    "external_network": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                }
+            }
+        }
+    ]
+}

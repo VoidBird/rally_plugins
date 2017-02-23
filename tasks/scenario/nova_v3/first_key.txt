@@ -1,0 +1,9 @@
+#cloud-config
+ssh_pwauth: true
+disable_root: 0
+user: root
+password: 'abc_123'
+chpasswd:
+  expire: false
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuN4Y2K7YY1NF78Rdx+xeOOOAw3cTx/n6WpEgqYd472jTc1Qr6tNLbc9dvGNlwRORWYaBM1mojz3h/4Y+rSeYypv8Sx6G5H94niZVvqooOhTT+a4i7yDCIVfixf9fdQ0xiAK4nU+57oJ9rZzSdKiPmWxa6EFpOLOR/5GFvDwVWsldU0k3MGR3lTQ0oXSMIwuoK8Jacq5NG1lDRw4qjri6ZhAxbmgUaGNOKVW1FRAxR0KdIxR15MzUXwQpeEBS1xWBryRj1C4AkB8pMTZsyO/wkii2iGyfCgybasM8I+WLXkEf0gNKyvZDBIgJQDpG3jbvO28zpjUVSgn3MbGW1g/nB wangxiao@wangxiao-TianYi5050

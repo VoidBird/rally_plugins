@@ -1,0 +1,11 @@
+{
+    "EayunGlance.list_images": [
+        {
+            "runner": {
+                "type": "serial",
+                "times": 3,
+            },
+            "context": {}
+        }
+    ]
+}
