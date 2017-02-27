@@ -1,0 +1,161 @@
+{% set conf_file = conf_file or "./conf.json" %}
+{
+    "TroveConfiguration.list_configurations": [
+        {
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        }
+    ],
+    "TroveConfiguration.create_and_delete_configuration": [
+        {
+            "args": {
+                "name": "rally_configuration",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "中文名称测试",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "name": "Test_01",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "!@#$%^&*()",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "name": "!@#$%^&*()001",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "test_00000000000000000001",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "rally_configuration",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "description": "For test"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "rally_configuration",
+                "values": {{conf_file}},
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "description": "描述信息测试"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+    ],
+    "TroveConfiguration.list_instances_with_configuration": [
+        {
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        }
+    ],
+    "TroveConfiguration.show_configuration": [
+        {
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        }
+    ],
+}

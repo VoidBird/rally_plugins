@@ -3,7 +3,6 @@
 
 from rally.plugins.openstack import scenario
 from rally.task import atomic
-from pdb import set_trace
 
 
 @scenario.configure(name="EayunTrove.list_datastores")

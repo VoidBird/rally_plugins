@@ -1,0 +1,20 @@
+{
+    "TroveConfiguration.create_and_delete_configuration": [
+        {
+            "args": {
+                "name": "中文名称测试",
+                "values": ./conf.json,
+                "datastore": "mysql",
+                "datastore_version": "5.5"
+            },
+            "context": {},
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+    ]
+}

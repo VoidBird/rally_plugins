@@ -50,3 +50,26 @@ class MaxDurationRange(sla.SLA):
     def details(self):
         return (_("%s - Maximum allowed duration range: %.2f%% <= %.2f%%") %
                 (self.status(), self._max - self._min, self.criterion_value))
+
+
+@plugin.configure(name="expect_ruselt")
+class OppositelyExpect(sla.SLA):
+
+    def __init__(self, criterion_value):
+        super(OppositelyExpect, self).__init__(criterion_value)
+
+    CONFIG_SCHEMA = {
+        "type": "string"
+    }
+
+    def add_iteration(self, iteration):
+        import pdb;pdb.set_trace()
+        if iteration.get("error"):
+            return self.success
+        else:
+            self.success = False
+            return self.sucess
+
+    def details(self):
+        # because of gettext use _()
+        return (_("%s - Expect result is Error") % self.status)

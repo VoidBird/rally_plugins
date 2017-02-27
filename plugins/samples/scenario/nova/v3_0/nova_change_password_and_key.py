@@ -14,8 +14,7 @@ def check_key(ip, pkey, expectation):
         client.set_missing_host_key_policy(paramiko.client.MissingHostKeyPolicy())
         client.connect(ip, 22, username="root", pkey=pkey)
     except paramiko.ssh_exception.AuthenticationException as e:
-        if expectation == True:
-            return False
+        return not expectation
     return expectation
 
 
