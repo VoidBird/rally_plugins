@@ -29,9 +29,15 @@ class MaxDurationRange(sla.SLA):
     }
 
     def __init__(self, criterion_value):
+        """
+        criterion_value is the value which task.json pass
+        """
         super(MaxDurationRange, self).__init__(criterion_value)
         self._min = 0
         self._max = 0
+
+    def merge(self):
+        pass
 
     def add_iteration(self, iteration):
 
@@ -55,20 +61,20 @@ class MaxDurationRange(sla.SLA):
 @plugin.configure(name="expect_ruselt")
 class OppositelyExpect(sla.SLA):
 
-    def __init__(self, criterion_value):
-        super(OppositelyExpect, self).__init__(criterion_value)
-
     CONFIG_SCHEMA = {
         "type": "string"
     }
 
     def add_iteration(self, iteration):
-        import pdb;pdb.set_trace()
-        if iteration.get("error"):
-            return self.success
-        else:
-            self.success = False
-            return self.sucess
+        if self.criterion_value == "error":
+            if iteration.get("error"):
+                return self.success
+            else:
+                self.success = False
+                return self.success
+
+    def merge(self, other):
+        pass
 
     def details(self):
         # because of gettext use _()
