@@ -1,0 +1,22 @@
+{
+    "Dummy.dummy": [
+        {
+            "args": {
+                "sleep": 0.01
+            },
+            "runner": {
+                "type": "constant",
+                "times": 3,
+                "concurrency": 1
+            },
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": "./conf.json",
+                    "datastore": mysql,
+                    "datastore_version": "5.5"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,275 @@
+{
+    "TroveInstance.create_instance": [
+        {
+            "args": {
+                "name": "test",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "test",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5,
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_volume_type": {
+                    "name": "rally_volume_type"
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "test",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": "./conf.json",
+                    "datastore": mysql,
+                    "datastore_version": "5.5"
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "test",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5,
+                },
+                "users": [
+                    {
+                        "name": "rally",
+                        "password": "rally123456"
+                    }
+                ]
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "test",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "availability_zone": "nova",
+                "volume": {
+                    "size": 5
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "test",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_trove_instance": {
+                    "name": "test",
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "name": "测试中文名",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "name": "!@#$%^&*()",
+                "flavor_id": 2,
+                "datastore": "mysql",
+                "datastore_version": "5.5",
+                "volume": {
+                    "size": 5
+                }
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+    ]
+}

@@ -1,0 +1,400 @@
+{
+    "TroveInstance.resize_instance": [
+        {
+            "args": {
+                "status": "ACTIVE",
+                "flavor_id": 3
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "instance_status": "BUILD",
+                "flavor_id": 3
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "instance_status": "ERROR",
+                "flavor_id": 3
+            },
+            "context": {
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "instance_status": "REBOOT",
+                "flavor_id": 3
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "instance_status": "RESTART_REQUIRED",
+                "flavor_id": 3
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "instance_status": "ACTIVE",
+                "flavor_id": 1
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+    ],
+    "TroveInstance.resize_volume": [
+        {
+            "args": {
+                "status": "ACTIVE",
+                "size": 10
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "instance_status": "BUILD",
+                "size": 10
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "instance_status": "ERROR",
+                "size": 10
+            },
+            "context": {
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "instance_status": "REBOOT",
+                "size": 10
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+        {
+            "args": {
+                "instance_status": "RESTART_REQUIRED",
+                "size": 10
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "instance_status": "ACTIVE",
+                "size": 3
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        },
+    ],
+}

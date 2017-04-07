@@ -9,7 +9,7 @@
             }
         }
     ],
-    "TroveConfiguration.create_and_delete_configuration": [
+    "TroveConfiguration.create_conf": [
         {
             "args": {
                 "name": "rally_configuration",
@@ -129,11 +129,34 @@
     "TroveConfiguration.list_instances_with_configuration": [
         {
             "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
                 "create_conf": {
                     "name": "rally_configuration",
                     "values": {{conf_file}},
                     "datastore": "mysql",
                     "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": true,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
                 }
             },
             "runner": {
@@ -158,4 +181,411 @@
             }
         }
     ],
+    "TroveConfiguration.attach_conf": [
+        {
+            "args": {
+                "status": "ACTIVE"
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "status": "BUILD"
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "status": "ERROR"
+            },
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "status": "RESTART"
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "status": "RESTART_REQUIRED"
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": false,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+    ],
+    "TroveConfiguration.delete_conf": [
+        {
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": true,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        }
+    ],
+    "TroveConfiguration.conf_param_list": [
+        {
+            "args": {
+                "datastore": "mysql",
+                "version": "5.5"
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+        }
+    ],
+    "TroveConfiguration.conf_param_show": [
+        {
+            "args": {
+                "datastore": "mysql",
+                "version": "5.5",
+                "key": "wait_timeout"
+            }
+        }
+    ],
+    "TroveConfiguration.update_conf": [
+        {
+            "args": {
+                "status": "ACTIVE",
+                "values": '{"wait_timeout": 10}'
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+            }
+        },
+        {
+            "args": {
+                "status": "ACTIVE",
+                "values": '{"wait_timeout": 10}'
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": true,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+        },
+        {
+            "args": {
+                "status": "RESTART_REQUIRED",
+                "values": '{"performance_schema":false}'
+            },
+            "context": {
+                "create_network": {
+                    "name": "rally_network"
+                },
+                "create_subnet": {
+                    "subnet_name": "rally_subnet",
+                    "cidr": "7.7.7.0/24",
+                },
+                "create_router": {
+                    "name": "rally_router",
+                    "external_gateway_info": {
+                        "network_id": "f64f4451-7441-4a81-8cac-a4c4acd4cc40"
+                    }
+                },
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+                "create_trove_instance": {
+                    "name": "rally",
+                    "configuration": true,
+                    "flavor_id": "2",
+                    "datastore": "mysql",
+                    "datastore_version": "5.5",
+                    "volume": {
+                        "size": 5
+                    }
+                }
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+        },
+        {
+            "args": {
+                "status": "ACTIVE",
+                "name": "new_conf"
+            },
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            }
+        },
+        {
+            "args": {
+                "status": "ACTIVE",
+                "values": '{"wait_timeout": 0}'
+            },
+            "runner": {
+                "type": "serial",
+                "time": 1
+            },
+            "context": {
+                "create_conf": {
+                    "name": "rally_configuration",
+                    "values": {{conf_file}},
+                    "datastore": "mysql",
+                    "datastore_version": "5.5"
+                },
+            },
+            "sla": {
+                "expect_ruselt": "error"
+            }
+        }
+    ]
 }
